@@ -119,9 +119,6 @@ canvas{
     bottom: 0;
     color: ghostwhite;
     font-size: 2vh;
-    
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: ghostwhite;
     padding: 0;
     margin: 0;
 }
@@ -166,5 +163,5 @@ canvas{
 }
 
 a{
-    text-decoration-color: ghostwhite !important;
+    color: ghostwhite !important;
 }
