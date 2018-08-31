@@ -11,12 +11,21 @@ $(window).on('resize', function () {
     resize_canvas();
 });
 
+let toDraw = true;
 function bind_handlers() {
-    $(document).on("mousemove", function (e) {
-        light_box(e.clientX, e.clientY);
+    $("#header, #tagline").hover(function (e) {
+        console.log("in");
+        toDraw = false;
+    }, function (e) {
+        console.log("out");
+        toDraw = true;
     });
 
-
+    $(document).on("mousemove", function (e) {
+        if (toDraw) {
+            light_box(e.clientX, e.clientY);
+        }
+    });
 }
 
 function set_up_mobile() {
