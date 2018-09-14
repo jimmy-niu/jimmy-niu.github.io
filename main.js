@@ -35,7 +35,7 @@ function bind_handlers() {
   });
 
   $("#resume").click(function(e) {
-    console.log("clicked");
+    location.href = "media/JimmyNiuResume.pdf";
   });
 }
 
