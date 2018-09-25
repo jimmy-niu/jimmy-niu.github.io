@@ -23,7 +23,6 @@
             <img class="card_image" src="media/code.svg" />
         </div>
 
-
         <div id="resume" class="card">
             <div class="card_title">Resume</div>
             <div class="card_blurb">Things I Did.</div>
@@ -31,18 +30,16 @@
         </div>
 
         <div class="card">
-            <div class="card_title">Hobbies</div>
+            <div id="hobbies" class="card_title">Hobbies</div>
             <div class="card_blurb">Fun Times.</div>
             <img class="card_image" src="media/bike.jpg" />
         </div>
-
 
         <div class="card">
             <div class="card_title">Contact</div>
             <div class="card_blurb">Snail Mail Accepted.</div>
             <img class="card_image" src="media/phone2.png" />
         </div>
-
     </div>
 
     <div id="content">
@@ -55,11 +52,24 @@
         </div>
     </div>
 
+    <!-- Hidden Components -->
+    <div class="hidden" d="code-content">
+        <h1>Maps (Java / Spark Backend, Web Frontend)</h1>
+        <img src="media/maps.PNG" alt="Maps Screenshot" />
+        <p> Maps was a partner project that took latitude and longitude pairs, street names, and lots of finger flexing to
+            create a visual map and route planner. Our final product allowed users to select start/end location via clicking
+            on the map or typing into autocorrected fields, and then showed them the shortest path using A* search. </p>
+    </div>
+
     <div id="mobile_bar">
-        <div id="mobile_resume" class="menu_item">Resume</div>
-        <div id="mobile_hobbies" class="menu_item">Hobbies</div>
-        <div id="mobile_github" class="menu_item">Github</div>
-        <div id="mobile_contact" class="menu_item">Contact</div>
+        <div id="mobile_resume" class="menu_item unselect">
+            <a href="media/JimmyNiuResume.pdf">Resume</a>
+        </div>
+        <div class="menu_item unselect">
+            <a id="mobile_hobbies">Hobbies</a>
+        </div>
+        <div id="mobile_github" class="menu_item unselect">Github</div>
+        <div id="mobile_contact" class="menu_item unselect">Contact</div>
     </div>
 
     <div id="footer">
