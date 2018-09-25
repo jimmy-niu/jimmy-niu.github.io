@@ -1,7 +1,7 @@
 let width;
 let height;
 
-// Canvas related variables. 
+// Canvas related variables.
 let canvas;
 let c;
 
@@ -26,7 +26,7 @@ function create_canvas() {
 function drawGrid() {
     c.fillStyle = "#050505";
     c.strokeStyle = "ghostwhite";
-    c.lineWidth = '0.15';
+    c.lineWidth = "0.15";
 
     c.beginPath();
     for (let i = X_OFFSET; i <= width; i += SQUARE_SIZE + X_OFFSET) {

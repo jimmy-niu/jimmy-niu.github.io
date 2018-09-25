@@ -8,15 +8,24 @@ const SQUARE_SIZE = 15;
 const X_OFFSET = 10;
 const Y_OFFSET = 10;
 
-$(document).ready(function () {
+$(document).ready(function() {
     setInterval(fadeSquares, 500);
 });
 
 let possible_calls = [
-    function (index_x, index_y) { draw_from_index(index_x, index_y - 1) },
-    function (index_x, index_y) { draw_from_index(index_x, index_y + 1) },
-    function (index_x, index_y) { draw_from_index(index_x - 1, index_y) },
-    function (index_x, index_y) { draw_from_index(index_x + 1, index_y) }];
+    function(index_x, index_y) {
+        draw_from_index(index_x, index_y - 1);
+    },
+    function(index_x, index_y) {
+        draw_from_index(index_x, index_y + 1);
+    },
+    function(index_x, index_y) {
+        draw_from_index(index_x - 1, index_y);
+    },
+    function(index_x, index_y) {
+        draw_from_index(index_x + 1, index_y);
+    }
+];
 
 function light_box(x, y) {
     if (Math.abs(old_x - x) > 2 || Math.abs(old_y - y) > 2) {
@@ -27,7 +36,7 @@ function light_box(x, y) {
 
         draw_from_index(index_x, index_y);
 
-        let rand = Math.floor((Math.random() * 4) + 1);
+        let rand = Math.floor(Math.random() * 4 + 1);
         possible_calls = shuffle(possible_calls);
 
         for (let i = 0; i < rand; i++) {
@@ -51,7 +60,6 @@ function draw_from_index(x, y) {
     let x_pixel = x * (X_OFFSET + SQUARE_SIZE) + X_OFFSET;
     let y_pixel = y * (Y_OFFSET + SQUARE_SIZE) + Y_OFFSET;
 
-
     c.rect(x_pixel, y_pixel, SQUARE_SIZE, SQUARE_SIZE);
     c.fillRect(x_pixel, y_pixel, SQUARE_SIZE, SQUARE_SIZE);
 
@@ -65,11 +73,10 @@ function fadeSquares() {
         let coor = lit_squares[i];
 
         c.globalAlpha = coor.alpha;
-        c.lineWidth = '0.15';
+        c.lineWidth = "0.15";
         c.fillStyle = "#050505";
         c.strokeStyle = "ghostwhite";
         c.fillRect(coor.x, coor.y, SQUARE_SIZE, SQUARE_SIZE);
-
 
         coor.alpha += 0.01;
 
@@ -84,4 +91,3 @@ function fadeSquares() {
         to_redraw = false;
     }
 }
-
